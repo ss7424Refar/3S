@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Selenium Api 练习</h1>
+        <p>学的不仅是技术，更是梦想！！！</p>
+    </div>
+
+    <hr>
+    <h2>元素选择, 点击事件练习</h2>
+    <button type="button" class="btn btn-primary" onclick="alert('通过元素id定位')" id="main">通过元素id定位</button>
+    <button type="button" class="btn btn-secondary" onclick="alert('通过元素name定位')" name="next">通过元素name定位</button>
+    <button type="button" class="btn btn-success" onclick="alert('通过xpath表达式定位')">通过xpath表达式定位</button>
+    <a type="button" class="btn btn-info" onclick="alert('通过完整超链接定位')">通过完整超链接定位</a>
+    <a type="button" class="btn btn-warning" onclick="alert('通过部分链接定位')">通过部分链接定位</a>
+    <span type="button" class="btn btn-danger" onclick="alert('通过span标签定位')">通过span标签定位</span>
+    <button type="button" class="btn btn-dark" onclick="alert('通过类名进行定位')">通过类名进行定位</button>
+    <a class="btn btn-light btn-lg" title="css" onclick="alert('通过css选择器进行定位')">通过css选择器进行定位</a>
+
+</body>
+</html>
