@@ -7,7 +7,10 @@ import time
 # 加载驱动
 browser = webdriver.Firefox()
 # 打开网页地址
-browser.get("http://localhost/ats_kimi/demo_excel.html")
+browser.get("http://localhost/demo_excel.html")
+# 设置窗口最大化
+browser.maximize_window()
+time.sleep(1)
 
 try:
     time.sleep(1)
@@ -27,6 +30,7 @@ except:
     browser.quit()
 else:
     print('done')
+    browser.quit()
 
 # 创建空白的excel文件
 wb = Workbook()

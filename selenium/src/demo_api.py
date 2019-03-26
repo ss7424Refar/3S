@@ -19,7 +19,10 @@ if __name__ == '__main__':
     # 加载驱动
     browser = webdriver.Firefox()
     # 打开网页地址
-    browser.get("http://localhost/ats_kimi/demo_api.html")
+    browser.get("http://localhost/demo_api.html")
+    time.sleep(1)
+    # 设置窗口最大化
+    browser.maximize_window()
     time.sleep(1)
 
     try:
@@ -77,4 +80,4 @@ if __name__ == '__main__':
         browser.quit()
     else:
         print('done')
-
+        browser.quit()

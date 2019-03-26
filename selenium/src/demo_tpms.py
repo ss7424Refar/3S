@@ -5,6 +5,9 @@ import time
 browser = webdriver.Firefox()
 
 browser.get("http://localhost/tpms_dev/login.php")
+# 设置窗口最大化
+browser.maximize_window()
+time.sleep(1)
 
 # 获取登录名和密码
 input_name = browser.find_element_by_name('tl_login')

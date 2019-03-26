@@ -7,7 +7,7 @@
  - 什么是Selenium
 
    ```
-   Selenium是一个用于Web应用程序自动化测试工具。Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE（7,  8, 9, 10, 11），Mozilla Firefox，Safari，Google Chrome，Opera等。
+   Selenium是一个用于Web应用程序自动化测试工具。Selenium测试直接运行在浏览器中，就像真正的用户在操作一样。支持的浏览器包括IE（7, 8, 9, 10, 11），Mozilla Firefox，Safari，Google Chrome，Opera等。
    
    主要功能包括：测试与浏览器的兼容性——测试你的应用程序看是否能够很好得工作在不同浏览器和操作系统之上。
    测试系统功能——创建回归测试检验软件功能和用户需求。支持自动录制动作和自动生成 .Net、Java、Python等不同语言的测试脚本。
@@ -40,6 +40,10 @@
       ```
       网格用于运行在不同的机器，不同的浏览器并行测试的工具，目的在于加快测试用例运行的速度，从而减少测试运行的总时间。利用Grid可以很方便地实现在多台机器上和异构环境中运行测试用例。
       ```
+
+      ![V0GLND.png](https://t1.picb.cc/uploads/2019/03/26/V0GLND.png)
+
+   
 
 - Selenium特点
 
@@ -107,7 +111,7 @@
 
  - Python 安装 （包括pip）
 
-   1. [[windows下面安装Python和pip终极教程](https://www.cnblogs.com/clover-siyecao/p/5693935.html)]
+   1. [[windows下安装Python和pip终极教程](https://www.cnblogs.com/clover-siyecao/p/5693935.html)]
 
    2. ubuntu 下安装Python和pip
 
@@ -191,7 +195,7 @@
 
 ## 4. Selenium的API
 
-	> [摘自](https://blog.csdn.net/weixin_36279318/article/details/79475388)
+> [摘自](https://blog.csdn.net/weixin_36279318/article/details/79475388)
 
  + 控制浏览器操作的一些方法
 
@@ -246,7 +250,7 @@
 
 ## 5. Selenium使用Demo
 
- +  元素定位
+ + 元素定位
 
    > 准备html放入web容器中，如ngnix，tomcat
 
@@ -310,6 +314,9 @@
        browser = webdriver.Firefox()
        # 打开网页地址
        browser.get("http://localhost/ats_kimi/demo_api.html")
+       time.sleep(1)
+       # 设置窗口最大化
+       browser.maximize_window()
        time.sleep(1)
    
        try:
@@ -433,6 +440,9 @@
    browser = webdriver.Firefox()
    # 打开网页地址
    browser.get("http://localhost/ats_kimi/demo_excel.html")
+   # 设置窗口最大化
+   browser.maximize_window()
+   time.sleep(1)
    
    try:
        time.sleep(1)
@@ -471,6 +481,22 @@
 
  + 实现网页上的简单操作并截图（TPMS）
 
+   > 流程分析
+
+   1. 打开TPMS网页
+   2. 输入用户名和密码
+   3. 点击login 按钮
+   4. 选中tile bar frame中的Adminstration链接
+   5. 滚动浏览器的滚动条，使其找到带zhulin的<a>链接
+   6. 点击<a>链接进行跳转
+   7. 在mainframe界面选中First Name 和Last Name
+   8. 分别修改为Stack 和John Snow
+   9. Edit User截图看是否修改好
+   10. 点击save按钮提交操作。
+   11. 退出浏览器
+
+   
+
    > python + selenium代码
 
    ```ptyhon
@@ -481,6 +507,9 @@
    browser = webdriver.Firefox()
    
    browser.get("http://localhost/tpms_dev/login.php")
+   # 设置窗口最大化
+   browser.maximize_window()
+   time.sleep(1)
    
    # 获取登录名和密码
    input_name = browser.find_element_by_name('tl_login')
@@ -541,14 +570,4 @@
    
    browser.close()
    ```
-
-   
-
-
-
-
-
-
-
-
 
