@@ -570,4 +570,3 @@
    
    browser.close()
    ```
-
