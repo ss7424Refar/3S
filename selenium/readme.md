@@ -193,7 +193,7 @@
 
 
 
-## 4. Selenium的API
+## 4. Selenium 的API
 
 > [摘自](https://blog.csdn.net/weixin_36279318/article/details/79475388)
 
@@ -210,22 +210,28 @@
    | click()             | 单击元素               |
    | submit()            | 用于提交表单           |
    | get_attribute(name) | 获取元素属性值         |
-   | is_displayed()      | 设置该元素是否用户可见 |
+   | is_displayed()      | 判断该元素是否用户可见 |
    | size                | 返回元素的尺寸         |
    | text                | 获取元素的文本         |
 
 + #### 鼠标事件
 
-  | 方法                   | 说明                                                         |
+  | 方法                    | 说明                                                         |
   | ---------------------- | ------------------------------------------------------------ |
   | ActionChains(driver)   | 构造ActionChains对象                                         |
-  | context_click()        | 执行鼠标悬停操作                                             |
-  | move_to_element(above) | 右击                                                         |
+  | context_click()        | 右击                                                         |
   | double_click()         | 双击                                                         |
   | drag_and_drop()        | 拖动                                                         |
   | move_to_element(above) | 执行鼠标悬停操作                                             |
   | context_click()        | 用于模拟鼠标右键操作， 在调用时需要指定元素定位              |
   | perform()              | 执行所有 ActionChains 中存储的行为，可以理解成是对整个操作的提交动作 |
+
+  ```
+  # 对定位到的元素执行鼠标悬停操作
+  ActionChains(driver).move_to_element(element).perform()
+  ```
+
+  
 
 + #### 多表单切换
 
